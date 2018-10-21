@@ -1,0 +1,12 @@
+Entities: 
+Bars[name, location, opening_hours, closing_hours]
+Drinkers[name, address]
+Items[name, manufacturer]
+Bills[ID, total_price, tip]
+
+Relationships:
+Frequents[drinker, bar]
+Issues[bill_ID, bar, time, day]
+Sells[bar, item, price]
+Billed_To[bill_ID, drinker]
+On[bill_ID, item, quantity]

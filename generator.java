@@ -15,7 +15,7 @@ public class generator {
 		
 		//BarsCSV(bars());
 		//DrinkersCSV(drinkers(names));
-		ItemsCSV(items());
+		//ItemsCSV(items());
 		//bars();
 		//drinkers();
 		//items();
@@ -158,7 +158,7 @@ public class generator {
 			Items.add(beers[i]);
 		}
 		for(int j = 0; j < other.length; j++) {
-			Items.add(other[j] + ",NULL");
+			Items.add(other[j] + ",");
 		}
 		
 		/*for(int i = 0; i < Items.size(); i++) {

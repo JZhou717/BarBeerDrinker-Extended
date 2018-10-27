@@ -1,82 +1,205 @@
 name,location,opening_hours,closing_hours
-
-Atomic Liquors,South Carolina,11:00,01:30
-Ray's Happy Birthday Bar,Tennessee,10:30,01:30
-Lee Harvey's,Pennsylvania,10:30,02:30
-Tin 'n' Lint,Lousiana,11:00,02:00
-Hot Bird,Tennessee,10:30,02:30
-The Tipsy Cow,Maryland,10:00,02:00
-Fat Angel,Lousiana,11:00,02:00
-Robert's Western World,West Virginia,11:30,02:30
-The Fainting Goat,Massachusetts,12:00,00:00
-95 Slide,New Hampshire,12:00,00:00
-Murio's Trophy Room,Tennessee,10:00,02:00
-The Monkey Farm Cafe,Tennessee,12:00,01:30
-The Pastry War,Florida,10:00,02:30
-The People's Republik,Delaware,12:00,01:30
-Psycho Suzi's,Iowa,11:00,02:00
-Tiki Bar,South Carolina,11:00,00:00
-The Grackle,Pennsylvania,11:00,01:30
-Snake and Jake's Christmas Club Lounge,Mississippi,12:00,02:30
-Bar of the Dogs,Lousiana,10:30,00:00
-Death and Co,Rhode Island,11:00,01:00
-The Surly Wench Pub,Delaware,10:30,01:00
-Otto's Shrunken Head,Rhode Island,11:00,00:00
-Hop Sing Laundromat,Maryland,10:30,01:30
-The Pitch and Roll,Rhode Island,10:30,01:30
-Hard Times and Misery Saloon,Pennsylvania,10:00,02:30
-Brotherhood of Thieves,Massachusetts,11:00,02:00
-Marie's Crisis Cafe,Vermont,11:00,01:30
-Jumbo's Clown Room,Kentucky,10:00,01:00
-The Billy goat Tavern,Iowa,11:30,00:00
-Smog Cutter,Iowa,11:00,01:30
-The Jack Saloon,Tennessee,10:00,00:00
-The Double Deuce,Massachusetts,10:00,01:30
-The Pool Hall,Maryland,10:00,01:30
-The Snakehole,Lousiana,12:00,02:30
-The Dexter Lake Club,Florida,11:30,01:30
-Maccadam's Old Oil House,Massachusetts,11:00,02:30
-The Drunken Clam,Ohio,10:00,00:00
-Playaz Club,Massachusetts,10:30,01:00
-Cockatoo Inn,Ohio,10:00,02:30
-Munden's Bar,Iowa,11:30,01:00
-The Brick,Lousiana,11:00,02:30
-The Crow & Crown,Massachusetts,11:00,00:00
-Tabard Inn,Maryland,12:00,02:00
-The Hip Joint,Connecticut,12:00,02:30
-Gaston's,Iowa,11:30,01:30
-Levy's,South Carolina,10:30,02:00
-The Admiral Benbow Inn,Kentucky,11:30,00:00
-Kelly's Korner,New Jersey,12:00,00:00
-Ink and Paint Club,Delaware,11:00,02:30
-Volpe's,Maine,10:00,00:00
-Harry Hope's Saloon,North Carolina,10:00,01:30
-O'Malley's Bar,Rhode Island,10:00,00:00
-Meibeyer's,Pennsylvania,11:30,01:30
-Ten Foward,Rhode Island,12:00,00:00
-The Green Dragon Inn,Delaware,12:00,01:00
-Kadie's Club Pecos,Maryland,11:00,02:00
-The Bar at Milliways,Delaware,12:00,02:00
-The Bar,Rhode Island,11:00,01:00
-The Moon Under Water,Lousiana,12:00,01:00
-The Bang Bang Bar,Kentucky,10:00,01:00
-Cheers,Florida,12:00,01:00
-Bada Bing!,Ohio,10:00,01:30
-Greely's,Maine,11:30,00:00
-Chatsubo,North Carolina,11:00,02:00
-Bob's Country Bunker,Georgia,11:30,01:00
-Club Sugar Ray,New Jersey,10:30,01:30
-The Hog's Head Inn,Florida,10:00,01:30
-The Last Resort,West Virginia,12:00,02:30
-The Tiny Twister,Alabama,11:30,02:30
-Dino's Bar and Grill,Georgia,11:30,01:30
-Winchester Tavern,Alabama,11:30,02:30
-A Clean, Well-Lighted Place,New Jersey,11:00,00:00
-The Gold Room,Ohio,11:00,00:00
-Paddy's Pub,Alabama,12:00,01:30
-Boar's Head Tavern,Maryland,10:00,02:30
-The Gem Saloon,Vermont,10:00,02:00
-Korova Milk Bar,New Hampshire,10:00,01:30
-Mos Eisley Cantina,South Carolina,11:00,01:30
-Rick's Cafe Americanain,Pennsylvania,10:30,01:00
-Moe's Tavern,Mississippi,10:30,02:30
+Atomic Liquors,Florida,10:00,02:00
+Ray's Happy Birthday Bar,Vermont,11:30,01:30
+Lee Harvey's,Maine,11:00,01:30
+Tin 'n' Lint,Delaware,10:00,02:30
+Hot Bird,Maryland,10:00,01:30
+The Tipsy Cow,Delaware,11:30,01:00
+Fat Angel,Tennessee,12:00,00:00
+Robert's Western World,Tennessee,11:30,02:00
+The Fainting Goat,Virginia,10:30,02:30
+95 Slide,Florida,11:30,01:00
+Murio's Trophy Room,New York,10:00,00:00
+The Monkey Farm Cafe,Mississippi,11:30,01:30
+The Pastry War,Rhode Island,12:00,01:00
+The People's Republik,South Carolina,11:30,02:00
+Psycho Suzi's,Kentucky,11:00,02:30
+Tiki Bar,Ohio,10:30,00:00
+The Grackle,New Jersey,11:00,00:00
+Snake and Jake's Christmas Club Lounge,Georgia,10:00,00:00
+Bar of the Dogs,Rhode Island,12:00,02:30
+Death and Co,Rhode Island,10:30,01:00
+The Surly Wench Pub,Ohio,11:00,02:00
+Otto's Shrunken Head,Tennessee,11:30,01:30
+Hop Sing Laundromat,South Carolina,10:30,01:30
+The Pitch and Roll,Iowa,12:00,01:00
+Hard Times and Misery Saloon,Georgia,12:00,02:30
+Brotherhood of Thieves,Kentucky,10:00,02:00
+Marie's Crisis Cafe,Georgia,10:00,02:00
+Jumbo's Clown Room,New Jersey,10:30,01:30
+The Billy goat Tavern,Delaware,11:30,02:00
+Smog Cutter,New York,11:30,02:00
+The Jack Saloon,Delaware,10:00,02:30
+The Double Deuce,Kentucky,11:30,01:00
+The Pool Hall,Iowa,10:00,00:00
+The Snakehole,Massachusetts,10:30,01:30
+The Dexter Lake Club,Iowa,10:30,02:30
+Maccadam's Old Oil House,Maine,10:00,01:00
+The Drunken Clam,Tennessee,10:30,01:30
+Playaz Club,Rhode Island,10:00,01:30
+Cockatoo Inn,Vermont,12:00,01:00
+Munden's Bar,Iowa,11:30,02:30
+The Brick,Pennsylvania,12:00,02:30
+The Crow & Crown,South Carolina,10:00,02:30
+Tabard Inn,Maryland,11:00,00:00
+The Hip Joint,Iowa,12:00,02:30
+Gaston's,Alabama,10:30,01:30
+Levy's,Iowa,11:00,02:00
+The Admiral Benbow Inn,Ohio,11:00,02:30
+Kelly's Korner,New York,11:30,02:00
+Ink and Paint Club,Massachusetts,12:00,02:30
+Volpe's,Delaware,12:00,01:30
+Harry Hope's Saloon,West Virginia,10:00,00:00
+O'Malley's Bar,Georgia,11:00,00:00
+Meibeyer's,Georgia,10:30,02:00
+Ten Foward,Alabama,10:00,01:00
+The Green Dragon Inn,Massachusetts,12:00,01:00
+Kadie's Club Pecos,Mississippi,11:30,01:00
+The Bar at Milliways,Maryland,12:00,00:00
+The Bar,North Carolina,10:00,01:30
+The Moon Under Water,Rhode Island,12:00,02:30
+The Bang Bang Bar,Iowa,10:30,02:30
+Cheers,North Carolina,11:00,00:00
+Bada Bing!,Virginia,10:00,02:00
+Greely's,Kentucky,10:30,01:00
+Chatsubo,Maryland,11:30,02:30
+Bob's Country Bunker,Georgia,10:00,01:00
+Club Sugar Ray,Kentucky,11:00,01:30
+The Hog's Head Inn,Kentucky,11:30,02:00
+The Last Resort,New York,11:00,01:00
+The Tiny Twister,New Jersey,10:00,01:30
+Dino's Bar and Grill,Maine,12:00,00:00
+Winchester Tavern,Georgia,12:00,01:30
+A Clean, Well-Lighted Place,Connecticut,11:30,02:00
+The Gold Room,Massachusetts,12:00,02:30
+Paddy's Pub,Vermont,11:30,02:00
+Boar's Head Tavern,Georgia,11:30,02:00
+The Gem Saloon,New Jersey,10:00,00:00
+Korova Milk Bar,Maryland,10:30,00:00
+Mos Eisley Cantina,New Hampshire,12:00,02:30
+Rick's Cafe Americanain,West Virginia,12:00,00:00
+Moe's Tavern,Mississippi,10:30,01:00
+Salty Squid,Tennessee,11:00,02:30
+Inky Stink,Delaware,10:30,00:00
+Leaky Faucet,Florida,12:00,02:00
+Rusted Furnace,Lousiana,11:00,02:00
+Mystic Island Casino,Virginia,11:00,00:00
+Tucker's Tavern,Rhode Island,11:30,00:00
+Mickey's Pub,Delaware,10:30,00:00
+Weenie Hut Jr's,Vermont,11:00,01:30
+Bean Bag,Lousiana,11:30,02:00
+Lighthouse Bar and Grill,Massachusetts,11:00,02:30
+Burnt Toast,New York,12:00,01:30
+Lefty's Pub,Tennessee,11:00,02:00
+Element,North Carolina,12:00,01:30
+Oyster Creek Inn,Vermont,11:30,01:30
+Scarlet Pub,Connecticut,10:30,00:00
+Clydz,Connecticut,11:00,01:00
+Corner Tavern,South Carolina,10:30,02:00
+Barca City,Rhode Island,10:00,02:00
+The Dogg House,West Virginia,11:00,02:30
+Steve Vo's,North Carolina,10:00,02:00
+Caribbean Breeze,South Carolina,11:00,00:00
+Cajun Cabin,Lousiana,10:30,00:00
+Jazzy B's,South Carolina,10:00,02:30
+Coffeecake,Maine,10:00,01:00
+Street Dips,Mississippi,12:00,01:00
+Just Off Vine,Kentucky,11:30,01:30
+El Tenedor,Alabama,11:00,02:00
+Wilma's,Delaware,11:30,00:00
+Jimmy D's,Ohio,10:30,01:00
+Jalapeno Brothers,Virginia,11:30,01:00
+Off the Hook,Connecticut,10:30,01:30
+The Rolling Hunger,Virginia,10:00,00:00
+Fast Eddie's,Lousiana,11:00,02:00
+Bernie's Burger Bus,Florida,10:00,01:30
+Mr. Sizzles,Tennessee,10:30,00:00
+1836 Grill,New York,12:00,00:00
+Burgers Ya Heard,Vermont,10:00,02:00
+The Boxcar,New Hampshire,11:30,02:00
+The Store,Ohio,10:30,01:00
+Lil Phil's Grill,Vermont,10:30,01:30
+Victory,Maine,11:30,01:00
+The Hideout Theatre,Rhode Island,10:00,01:00
+Midnight Cowboy,North Carolina,11:30,01:00
+The Roosevelt Room,Kentucky,12:00,01:30
+Firehouse Lounge,New Jersey,11:30,00:00
+HandleBar,South Carolina,12:00,01:30
+Garage,North Carolina,11:30,01:00
+Friends Bar,New Jersey,11:00,02:30
+Whisler's,Florida,10:00,00:00
+Dive Bar and Lounge,Ohio,11:30,00:00
+Seven Grand,Tennessee,11:30,02:30
+Craft Pride,Mississippi,11:30,02:30
+Knomad Bar,New York,11:00,01:00
+The Townsend,Delaware,11:30,02:00
+The Jackalope,Virginia,10:00,00:00
+Half Step,Delaware,11:00,02:30
+Full Circle Bar,Lousiana,11:30,02:30
+The Skylark Lounge,Iowa,11:00,02:30
+The Crazy Horse,Virginia,12:00,02:30
+Mikkeller Bar,Mississippi,12:00,00:00
+Bourbon and Branch,Pennsylvania,10:30,01:30
+Smuggler's Cove,Connecticut,10:00,00:00
+Pacific Cocktail Haven,Georgia,10:00,01:00
+Benjamin Cooper,Pennsylvania,12:00,02:30
+Rickhouse,Lousiana,10:00,02:30
+Holy Water,Ohio,12:00,02:00
+Trick Dog,South Carolina,11:30,02:30
+Comstock Saloon,Virginia,10:00,00:00
+Whitechapel,Florida,11:00,01:30
+Black Horse London Pub,Kentucky,11:30,01:30
+15 Romolo,Virginia,11:00,00:00
+Novela,West Virginia,10:00,01:30
+Forgery Bar,Kentucky,12:00,01:30
+Cityscape,Vermont,10:00,00:00
+Local Edition,North Carolina,11:30,02:30
+Bar Fluxus,New Jersey,11:30,02:30
+Zeitgeist,New York,11:00,02:30
+Tonga Room,Vermont,11:30,00:00
+Top of the Mark,Delaware,10:00,02:00
+Fireside Bar,Mississippi,12:00,02:00
+Library Bar,Vermont,11:30,02:30
+Last Call Bar,Tennessee,12:00,01:30
+The Alembic,Pennsylvania,11:30,00:00
+Kozy Kar,Florida,10:00,01:00
+Rock Bar,New Jersey,11:00,00:00
+Zam Zam,Delaware,11:30,02:30
+Toronado,Maine,12:00,02:00
+Bar 821,South Carolina,12:00,02:30
+The House of shields,Vermont,10:30,01:30
+Buddha Lounge,Maine,10:00,00:00
+Wildhawk,Maine,11:00,02:00
+Tempest,Alabama,10:00,02:30
+BlackBird,North Carolina,11:00,00:00
+Third Rail,Alabama,11:00,02:30
+Cold Drinks Bar,New Hampshire,12:00,02:30
+Madrone Art Bar,Pennsylvania,10:00,00:00
+Clock Bar,West Virginia,10:00,00:00
+Aunt Charlie's Lounge,Tennessee,12:00,01:00
+Linden Room,Maryland,12:00,02:30
+Bender's,New Jersey,11:30,02:00
+The Page,New York,10:00,02:00
+The Starlight Room,Pennsylvania,10:00,02:00
+The Monk's Kettle,New Hampshire,10:00,01:00
+Bond Bar,North Carolina,12:00,00:00
+Dalva,South Carolina,12:00,00:00
+White Cap,North Carolina,11:30,02:00
+Canela Bistro and Wine Bar,West Virginia,10:30,02:00
+Bus Stop,Iowa,11:00,01:00
+Press Club,Lousiana,10:00,02:00
+Hazel Southern Bar,Maine,10:30,02:00
+Monaghan's Bar,Virginia,12:00,00:00
+Noc Noc,Virginia,11:30,00:00
+Oddjob,West Virginia,10:00,02:00
+The Sea Star,Tennessee,10:00,01:00
+Resolute,South Carolina,11:00,00:00
+The Beer Hall,Delaware,11:00,02:00
+Hi Tops,West Virginia,10:30,00:00
+Union Square Sports Bar,Maine,10:30,01:30
+Blondie's Bar,New Hampshire,10:00,02:30
+Brass Tracks,Vermont,12:00,01:00
+Bar San Pancho,Iowa,11:30,02:30
+The Pied Piper,Georgia,10:00,01:00
+Charmaine's,Delaware,10:00,02:30
+The Chapel,New Jersey,10:30,00:00

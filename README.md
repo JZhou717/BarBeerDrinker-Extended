@@ -19,3 +19,5 @@ For the frequents portion of the Second Update, our randomized code generated 36
 After the many hours it took to add the Frequents CSV to the database and running the query to check for matching, we found that an ideal 1393 tuples are valid. This has been reduced greatly from the 36,000 random tuples. 
 
 The next update we committed to github was a big one. We completed the remaining Java code to generate the data. We have also created the CSVS for the remaining entities and relations. We will be uploading the CSVs to the database now to run our queries on in the next step.
+
+We realized that one of our values in our bars list has a comma in the name of the bar. This is problematic since this messes up how we are importing from our CSV. As a precaution, we generate all new CSVs. We also had a hard time with the Import Wizard in MySQL Workbench since it would take hours to load in our data. Because of this, we wrote a python script that loads in the CSVs for us.

@@ -11,7 +11,7 @@ public class generator {
  */
 	public static void main(String[] args) throws Exception{
 		
-		//ArrayList<String> names = nameGenerator();
+		ArrayList<String> names = nameGenerator();
 		
 		//BarsCSV(bars());
 		//DrinkersCSV(drinkers(names));
@@ -19,6 +19,7 @@ public class generator {
 		//bars();
 		//drinkers();
 		//items();
+		FrequentsCSV(frequents(names));
 		return;
 	}
 	
@@ -178,9 +179,67 @@ public class generator {
 		pw.close();
 	}
 	
-	public static void frequents() {
+	public static ArrayList<String> frequents(ArrayList<String> drinkers) {
+		String[] bars = {"Atomic Liquors", "Ray's Happy Birthday Bar", "Lee Harvey's",
+				"Tin 'n' Lint", "Hot Bird", "The Tipsy Cow", "Fat Angel", "Robert's Western World", "The Fainting Goat", "95 Slide",
+				"Murio's Trophy Room", "The Monkey Farm Cafe", "The Pastry War", "The People's Republik","Psycho Suzi's", "Tiki Bar",
+				"The Grackle", "Snake and Jake's Christmas Club Lounge", "Bar of the Dogs", "Death and Co",
+				"The Surly Wench Pub", "Otto's Shrunken Head", "Hop Sing Laundromat", "The Pitch and Roll", "Hard Times and Misery Saloon", "Brotherhood of Thieves",
+				"Marie's Crisis Cafe", "Jumbo's Clown Room", "The Billy goat Tavern", "Smog Cutter", "The Jack Saloon",
+				"The Double Deuce", "The Pool Hall", "The Snakehole", "The Dexter Lake Club", "Maccadam's Old Oil House",
+				"The Drunken Clam", "Playaz Club", "Cockatoo Inn", "Munden's Bar", "The Brick", "The Crow & Crown", "Tabard Inn", "The Hip Joint",
+				"Gaston's", "Levy's", "The Admiral Benbow Inn", "Kelly's Korner", "Ink and Paint Club", "Volpe's", "Harry Hope's Saloon",
+				"O'Malley's Bar", "Meibeyer's", "Ten Foward", "The Green Dragon Inn", "Kadie's Club Pecos", "The Bar at Milliways",
+				"The Bar", "The Moon Under Water", "The Bang Bang Bar", "Cheers", "Bada Bing!", "Greely's", "Chatsubo", "Bob's Country Bunker", 
+				"Club Sugar Ray", "The Hog's Head Inn", "The Last Resort", "The Tiny Twister", "Dino's Bar and Grill", "Winchester Tavern",
+				"A Clean, Well-Lighted Place", "The Gold Room", "Paddy's Pub", "Boar's Head Tavern", "The Gem Saloon", "Korova Milk Bar",
+				"Mos Eisley Cantina", "Rick's Cafe Americanain", "Moe's Tavern", "Salty Squid", "Inky Stink", "Leaky Faucet", "Rusted Furnace", 
+				"Mystic Island Casino", "Tucker's Tavern", "Mickey's Pub", "Weenie Hut Jr's", "Bean Bag", "Lighthouse Bar and Grill", "Burnt Toast", 
+				"Lefty's Pub", "Element", "Oyster Creek Inn", "Scarlet Pub", "Clydz", "Corner Tavern", "Barca City", "The Dogg House", "Steve Vo's", 
+				"Caribbean Breeze", "Cajun Cabin", "Jazzy B's", "Coffeecake", "Street Dips", "Just Off Vine", "El Tenedor", "Wilma's", "Jimmy D's", 
+				"Jalapeno Brothers", "Off the Hook", "The Rolling Hunger", "Fast Eddie's", "Bernie's Burger Bus", "Mr. Sizzles", "1836 Grill", 
+				"Burgers Ya Heard", "The Boxcar", "The Store", "Lil Phil's Grill", "Victory", "The Hideout Theatre", "Midnight Cowboy", 
+				"The Roosevelt Room", "Firehouse Lounge", "HandleBar", "Garage", "Friends Bar", "Whisler's", "Dive Bar and Lounge", "Seven Grand", 
+				"Craft Pride", "Knomad Bar", "The Townsend", "The Jackalope", "Half Step", "Full Circle Bar", "The Skylark Lounge",
+				"The Crazy Horse", "Mikkeller Bar", "Bourbon and Branch", "Smuggler's Cove", "Pacific Cocktail Haven", "Benjamin Cooper", 
+				"Rickhouse", "Holy Water", "Trick Dog", "Comstock Saloon", "Whitechapel", "Black Horse London Pub", "15 Romolo", "Novela", 
+				"Forgery Bar", "Cityscape", "Local Edition", "Bar Fluxus", "Zeitgeist", "Tonga Room", "Top of the Mark", "Fireside Bar", 
+				"Library Bar", "Last Call Bar", "The Alembic", "Kozy Kar", "Rock Bar", "Zam Zam", "Toronado", "Bar 821", "The House of shields", 
+				"Buddha Lounge", "Wildhawk", "Tempest", "BlackBird", "Third Rail", "Cold Drinks Bar", "Madrone Art Bar", "Clock Bar", 
+				"Aunt Charlie's Lounge", "Linden Room", "Bender's", "The Page", "The Starlight Room", "The Monk's Kettle", "Bond Bar", 
+				"Dalva", "White Cap", "Canela Bistro and Wine Bar", "Bus Stop", "Press Club", "Hazel Southern Bar", "Monaghan's Bar", 
+				"Noc Noc", "Oddjob", "The Sea Star", "Resolute", "The Beer Hall", "Hi Tops", "Union Square Sports Bar", "Blondie's Bar", 
+				"Brass Tracks", "Bar San Pancho", "The Pied Piper", "Charmaine's", "The Chapel"};
 		
-		return;
+		ArrayList<String> f = new ArrayList<String>();
+		String tuple = "";
+		
+		//for each drinker in our list
+		for(int i = 0; i < drinkers.size(); i++) {
+			tuple = drinkers.get(i);
+			
+			//create a random amount of bars that that drinker frequents
+			int rnd = new Random().nextInt(50);
+			for(int j = 0; j < rnd; j++) {
+				int randomBar = new Random().nextInt(bars.length);
+				tuple += "," + bars[randomBar];
+				f.add(tuple);
+				tuple = drinkers.get(i);
+			}
+			
+		}
+		
+		return f;
+	}
+	
+	public static void FrequentsCSV(ArrayList<String> Frequents) throws FileNotFoundException{
+		PrintWriter pw = new PrintWriter(new File("c:/Users/Jake/Desktop/School/Fall 2018/Data Management/Project/Frequents.csv"));
+		String header = "drinker,bar";
+		pw.println(header);
+		for(int i = 0; i < Frequents.size(); i++) {
+			pw.println((Frequents.get(i)).toString());
+		}
+		pw.close();
 	}
 	
 	public static void issues() {

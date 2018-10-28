@@ -15,3 +15,7 @@ So far, we have create a random tuple generator using Java. We have found an onl
 We will continue by uploading our Items, and Bars CSVs into the proper tables. We will then create data for: Frequents, Sells, On, Bills, and Billed_To. We will upload these into our database and then use queries to ensure that certain patterns, like drinkers only frequenting bars in their own states, will be true for our database.
 
 For the frequents portion of the Second Update, our randomized code generated 36,000 random tuples. We are hoping that the 1/20 chance of each drinker being in state A and 1/20 chance of each bar being in state A means that there is a 1/400 chance that each tuple can exist together. This would bring down the total number of tuples in the frequents table that are valid to our pattern greatly.
+
+After the many hours it took to add the Frequents CSV to the database and running the query to check for matching, we found that an ideal 1393 tuples are valid. This has been reduced greatly from the 36,000 random tuples. 
+
+The next update we committed to github was a big one. We completed the remaining Java code to generate the data. We have also created the CSVS for the remaining entities and relations. We will be uploading the CSVs to the database now to run our queries on in the next step.

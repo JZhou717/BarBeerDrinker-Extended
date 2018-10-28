@@ -13,18 +13,17 @@ public class generator {
 		
 		//ArrayList<String> names = nameGenerator();
 		
-		//BarsCSV(bars());
-		//DrinkersCSV(drinkers(names));
-		//ItemsCSV(items());
-		//bars();
-		//drinkers();
-		//items();
-		//FrequentsCSV(frequents(names));
-		//Billed_toCSV(billed_to(names));
-		//SellsCSV(sells());
-		//OnCSV(on());
-		//BillsCSV(bills());
-		//IssuesCSV(issues());
+		/*
+		BarsCSV(bars());
+		DrinkersCSV(drinkers(names));
+		ItemsCSV(items());
+		FrequentsCSV(frequents(names));
+		Billed_toCSV(billed_to(names));
+		SellsCSV(sells());
+		OnCSV(on());
+		BillsCSV(bills());
+		IssuesCSV(issues());
+		*/
 		return;
 	}
 	
@@ -41,7 +40,7 @@ public class generator {
 				"O'Malley's Bar", "Meibeyer's", "Ten Foward", "The Green Dragon Inn", "Kadie's Club Pecos", "The Bar at Milliways",
 				"The Bar", "The Moon Under Water", "The Bang Bang Bar", "Cheers", "Bada Bing!", "Greely's", "Chatsubo", "Bob's Country Bunker", 
 				"Club Sugar Ray", "The Hog's Head Inn", "The Last Resort", "The Tiny Twister", "Dino's Bar and Grill", "Winchester Tavern",
-				"A Clean, Well-Lighted Place", "The Gold Room", "Paddy's Pub", "Boar's Head Tavern", "The Gem Saloon", "Korova Milk Bar",
+				"A Clean Well-Lighted Place", "The Gold Room", "Paddy's Pub", "Boar's Head Tavern", "The Gem Saloon", "Korova Milk Bar",
 				"Mos Eisley Cantina", "Rick's Cafe Americanain", "Moe's Tavern", "Salty Squid", "Inky Stink", "Leaky Faucet", "Rusted Furnace", 
 				"Mystic Island Casino", "Tucker's Tavern", "Mickey's Pub", "Weenie Hut Jr's", "Bean Bag", "Lighthouse Bar and Grill", "Burnt Toast", 
 				"Lefty's Pub", "Element", "Oyster Creek Inn", "Scarlet Pub", "Clydz", "Corner Tavern", "Barca City", "The Dogg House", "Steve Vo's", 
@@ -197,7 +196,7 @@ public class generator {
 				"O'Malley's Bar", "Meibeyer's", "Ten Foward", "The Green Dragon Inn", "Kadie's Club Pecos", "The Bar at Milliways",
 				"The Bar", "The Moon Under Water", "The Bang Bang Bar", "Cheers", "Bada Bing!", "Greely's", "Chatsubo", "Bob's Country Bunker", 
 				"Club Sugar Ray", "The Hog's Head Inn", "The Last Resort", "The Tiny Twister", "Dino's Bar and Grill", "Winchester Tavern",
-				"A Clean, Well-Lighted Place", "The Gold Room", "Paddy's Pub", "Boar's Head Tavern", "The Gem Saloon", "Korova Milk Bar",
+				"A Clean Well-Lighted Place", "The Gold Room", "Paddy's Pub", "Boar's Head Tavern", "The Gem Saloon", "Korova Milk Bar",
 				"Mos Eisley Cantina", "Rick's Cafe Americanain", "Moe's Tavern", "Salty Squid", "Inky Stink", "Leaky Faucet", "Rusted Furnace", 
 				"Mystic Island Casino", "Tucker's Tavern", "Mickey's Pub", "Weenie Hut Jr's", "Bean Bag", "Lighthouse Bar and Grill", "Burnt Toast", 
 				"Lefty's Pub", "Element", "Oyster Creek Inn", "Scarlet Pub", "Clydz", "Corner Tavern", "Barca City", "The Dogg House", "Steve Vo's", 
@@ -285,7 +284,7 @@ public class generator {
 				"Brass Tracks", "Bar San Pancho", "The Pied Piper", "Charmaine's", "The Chapel"};
 		
 		String tuple;
-		for(int i = 0; i < 20000; i++) {
+		for(int i = 0; i < 22000; i++) {
 			tuple = Integer.toString(i);
 			int barRnd = new Random().nextInt(bars.length);
 			tuple += "," + bars[barRnd];
@@ -409,7 +408,7 @@ public class generator {
 	
 	public static ArrayList<String> billed_to(ArrayList<String> names) {
 		ArrayList<String> bt = new ArrayList<String>();
-		for(int i = 0; i < 20000; i++) {
+		for(int i = 0; i < 22000; i++) {
 			int rand = new Random().nextInt(names.size());
 			String billed_tuple = Integer.toString(i);
 			billed_tuple += "," + names.get(rand);
@@ -457,7 +456,7 @@ public class generator {
 		ArrayList<String> on = new ArrayList<String>();
 		
 		String tuple;
-		for(int i = 0; i < 20000; i++) {
+		for(int i = 0; i < 22000; i++) {
 			int rand = new Random().nextInt(3) + 1;
 			for(int j = 0; j < rand; j++) {
 				int beerOrItem = new Random().nextInt(2);
@@ -485,7 +484,7 @@ public class generator {
 	}
 	
 	public static void OnCSV(ArrayList<String> On) throws FileNotFoundException{
-		PrintWriter pw = new PrintWriter(new File("c:/Users/Jake/Desktop/School/Fall 2018/Data Management/Project/On.csv"));
+		PrintWriter pw = new PrintWriter(new File("c:/Users/Jake/Desktop/School/Fall 2018/Data Management/Project/Includes.csv"));
 		String header = "bill_ID,item,quantity";
 		pw.println(header);
 		for(int i = 0; i < On.size(); i++) {
@@ -499,7 +498,7 @@ public class generator {
 		String[] tips = {".15", ".18", ".20", ".25"};
 		
 		String tuple;
-		for(int i = 0; i < 20000; i++) {
+		for(int i = 0; i < 22000; i++) {
 			tuple = Integer.toString(i) + ",0,";
 			int rand = new Random().nextInt(tips.length);
 			tuple += tips[rand];

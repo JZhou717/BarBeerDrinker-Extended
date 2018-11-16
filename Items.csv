@@ -1,9 +1,7 @@
 name,manufacturer
-Budweiser,Anheuser-Busch
 Stella Artios,Anheuser-Busch
 Landshark Lager,Anheuser-Busch
 Hoegaarden,Anheuser-Busch
-Coors,MillerCoors
 Icehouse,MillerCoors
 Blue Moon,MillerCoors
 Pilsner,MillerCoors
@@ -49,9 +47,11 @@ Hop Head Red,Green Flash Brewing
 Blind Pig IPA,Russian River Brewing
 Hop Slam, Bell's Brewery
 La Roja,Jolly Pumpkin Artisan Ales
+Coors,MillerCoors
 PseudoSue,Toppling Goliath
+Budweiser,Anheuser-Busch
 Hamburger,
-Frie,
+Fries,
 Hot Dog,
 Lemonade,
 Coke,

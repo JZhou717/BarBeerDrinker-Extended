@@ -10,6 +10,7 @@ import {ActivatedRoute} from '@angular/router';
 export class BeerDetailsComponent implements OnInit {
   beerName: string;
   beerDetails: Beer;
+  beerTopBars: any[];
   constructor(private route: ActivatedRoute, private beerService: BeersService) {
     route.paramMap.subscribe(paramMap => {
       this.beerName = paramMap.get('beer');
@@ -28,6 +29,12 @@ export class BeerDetailsComponent implements OnInit {
 
       );
     });
+    this.beerService.getBeerTopBars(this.beerName).subscribe(
+      data => {
+        console.log(data);
+        this.beerTopBars = data;
+      }
+    )
   
   }
 

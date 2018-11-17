@@ -19,9 +19,12 @@ export class BeersService {
     return this.http.get<any[]>('api/beer');
   }
   getBarsSelling(beer: string){
-    return this.http.get<BeerLocation[]>('/api/bars-selling')
+    return this.http.get<BeerLocation[]>('/api/bars-selling');
   }
   getBeer(beer: string){
     return this.http.get<Beer>('/api/beer/' + beer);
+  }
+  getBeerTopBars(beer: string){
+    return this.http.get<any[]>('api/beertopbar/' + beer);
   }
 }

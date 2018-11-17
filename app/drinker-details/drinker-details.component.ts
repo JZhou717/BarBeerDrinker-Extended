@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {DrinkersService, Drinker, DrinkerTop} from '../drinkers.service';
 import {HttpResponse} from '@angular/common/http';
 import {ActivatedRoute} from '@angular/router';
+import { BarsComponent } from '../bars/bars.component';
 declare const Highcharts: any;
 @Component({
   selector: 'app-drinker-details',
@@ -11,6 +12,8 @@ declare const Highcharts: any;
 export class DrinkerDetailsComponent implements OnInit {
   drinkerName: string;
   drinkerDetails: Drinker;
+  drinkerTransactions: any[];
+  topBeers: DrinkerTop[];
   
   constructor(private route: ActivatedRoute, private drinkerService: DrinkersService) {
     
@@ -30,7 +33,29 @@ export class DrinkerDetailsComponent implements OnInit {
         }
 
       );
+      
     });
+    this.drinkerService.getDrinkerBeers(this.drinkerName).subscribe(
+      data => {
+        console.log(data);
+        const beers = [];
+        const counts = [];
+        data.forEach(beer => {
+          beers.push(beer.item)
+          counts.push(beer.counter);
+        })
+        this.renderChart(beers,counts);
+        
+      
+       
+      }
+    );
+    this.drinkerService.getDrinkerTransactions(this.drinkerName).subscribe(
+      data => {
+        console.log(data);
+        this.drinkerTransactions = data;
+      }
+    )
   
   }
 
@@ -78,3 +103,4 @@ export class DrinkerDetailsComponent implements OnInit {
     });
   }
 }
+

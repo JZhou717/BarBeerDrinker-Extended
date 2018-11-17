@@ -54,6 +54,16 @@ const routes: Routes = [
     path: "topbeers/:drinker",
     pathMatch: "full",
     component: DrinkerDetailsComponent
+  },
+  {
+    path: "beertopbars/:beer",
+    pathMatch: "full",
+    component: BeerDetailsComponent
+  },
+  {
+    path: "drinkertransactions/:drinker",
+    pathMatch: "full",
+    component: DrinkerDetailsComponent
   }
 ];
 

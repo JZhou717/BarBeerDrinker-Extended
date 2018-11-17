@@ -8,8 +8,8 @@ export interface Drinker {
 
 }
 export interface DrinkerTop{
-  beers: Beer[];
-  count: number[];
+  beers: string;
+  count: number;
 }
 @Injectable({
   providedIn: 'root'
@@ -26,5 +26,8 @@ export class DrinkersService {
   }
   getDrinker(drinker: string){
     return this.http.get<Drinker>('/api/drinker/' + drinker);
+  }
+  getDrinkerTransactions(drinker: string){
+    return this.http.get<any[]>('api/drinkertransaction/' + drinker)
   }
 }

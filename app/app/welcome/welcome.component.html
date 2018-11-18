@@ -1,0 +1,296 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Welcome to Bar Beer Drinker Plus</h1>
+    <p class="lead">Use this page to modify our tables</p>
+  </div>
+</div>
+<br><h3>QEUERY 1</h3>
+<p>#Verification for Pattern 1:<br>
+  #Pattern 1:Transactions/bills cannot be issued at times when the given bar is closed<br>
+  SELECT NOT EXISTS(<br>
+  select * <br>
+  from issues i left join bars b on i.bar = b.name <br>
+  where<br>
+  (SELECT ((SELECT STRCMP(i.time, b.opening_hours)) < 0) = 1) #THIS CHECKS TO SEE IF THE BILL WAS ISSUED BEFORE THE BAR OPENED; <br>
+  and <br>
+  (SELECT ((STRCMP(i.time, b.closing_hours)) > 0) = 1) #THIS CHECKS TO SEE IF THE BILL WAS ISSUED AFTER THE BAR CLOSED <br>
+  ) as issuedOnlyWhenBarOpen;</p>
+  <form method = "POST" action="/api/test1">
+    <input type="submit" value="Test Assertion 1">
+  </form>
+<br><br><h3>QEUERY 2</h3>
+<p>Verification for Pattern 2:<br>
+  #Pattern 2:Drinkers cannot frequent bars in different state <br>
+  SELECT NOT EXISTS( <br>
+  select * <br>
+  from frequents f left join drinkers d on f.drinker = d.name <br>
+  left join bars b on b.name = f.bar <br>
+  where d.address <> b.location <br>
+  ) as frequentsOnlyInState;</p>
+  <form method = "POST" action="/api/test2">
+    <input type="submit" value="Test Assertion 2">
+  </form>
+<br><br><h3>QEUERY 3</h3>
+<p>#Verification for Pattern 3:<br>
+  /*Pattern 3:For every two beers, b1 and b2, different bars may charge differently for b1 and b2 but b1 <br>
+  should either be less expensive than b2 in ALL bars or more expensive than b2 in ALL bars. <br>
+  Cannot be the case that in one bar Corona is more expensive than Bud and in another Bud is more expensive than Corona. <br>
+  But Corona may be more expensive than Bud in one bar, and have the same price as Bud in another.*/<br>
+  SELECT NOT EXISTS(<br>
+  select *<br>
+  from sells itemA left join sells itemB on itemA.bar = itemB.bar	#This outer query finds all instances where itemA is cheaper or at the same price as itemB<br>
+  where itemA.item <> itemB.item<br>
+  and itemA.price <= itemB.price<br>
+  and (itemA.bar, itemA.item) in<br>
+  (select itemA1.bar, itemA1.item #This inner query checks all instances where the same itemA is more expensive than the same itemB <br>
+  from sells itemA1 left join sells itemB1 on itemA1.bar = itemB1.bar <br>
+  where itemA1.item <> itemB1.item<br>
+  and itemA1.price > itemB1.price<br>
+  and itemA.item = itemA1.item<br>
+  and itemB.item = itemB1.item<br>
+  and itemA.bar <> itemA1.bar)<br>
+  ) as soldCheaperEverywhere;</p>
+  <form method = "POST" action="/api/test3">
+    <input type="submit" value="Test Assertion 3">
+  </form>
+<br><br>
+<h2>Updates</h2>
+<span style = "font-size: 14pt;"><strong>Bars Table</strong></span><br>
+<form method = "POST" action="/api/updatebars">
+  Name:<br>
+  <input type="text" name="name"><br>
+  Location:<br>
+  <input type="text" name="loc"><br>
+  Opening Hours:<br>
+  <input type="text" name="opening"><br>
+  Closing Hours:<br>
+  <input type="text" name="closing"><br><br>
+  <input type="submit" value="Submit">
+</form>
+<br><span style = "font-size: 14pt;"><strong>Items Table</strong></span><br>
+<form action="/api/updateitems">
+  Name:<br>
+  <input type="text" name="name"><br>
+  Manufacturer:<br>
+  <input type="text" name="manufacturer"><br><br>
+  <input type="submit" value="Submit">
+</form>
+<br><span style = "font-size: 14pt;"><strong>Drinkers Table</strong></span><br>
+<form method = "POST" action="/api/updatedrinkers">
+  Name:<br>
+  <input type="text" name="name"><br>
+  Address:<br>
+  <input type="text" name="address"><br><br>
+  <input type="submit" value="Submit">
+</form>
+<br><span style = "font-size: 14pt;"><strong>Frequents Table</strong></span><br>
+<form method = "POST" action="/api/updatefrequents">
+  Drinker:<br>
+  <input type="text" name="drinker"><br>
+  Original Bar:<br>
+  <input type="text" name="oldbar"><br>
+  New Bar:<br>
+  <input type="text" name="bar"><br><br>
+  <input type="submit" value="Submit">
+</form>
+<br><span style = "font-size: 14pt;"><strong>Billed_To Table</strong></span><br>
+<form method = "POST" action="/api/updatebilledto">
+  Bill_ID:<br>
+  <input type="number" name="bill_ID"><br>
+  Drinker:<br>
+  <input type="text" name="drinker"><br><br>
+  <input type="submit" value="Submit">
+</form>
+<br><span style = "font-size: 14pt;"><strong>Sells Table</strong></span><br>
+<form method = "POST" action="/api/updatesells">
+  Bar:<br>
+  <input type="text" name="bar"><br>
+  Original Item:<br>
+  <input type="text" name="olditem"><br>
+  New Item:<br>
+  <input type="text" name="item"><br>
+  Price:<br>
+  <input type="text" name="price"><br><br>
+  <input type="submit" value="Submit">
+</form>
+<br><span style = "font-size: 14pt;"><strong>Includes Table</strong></span><br>
+<form method = "POST" action="/api/updateincludes">
+  Bill_ID:<br>
+  <input type="text" name="bill_ID"><br>
+  Original Item:<br>
+  <input type="text" name="olditem"><br>
+  New Item:<br>
+  <input type="text" name="item"><br>
+  Quantity:<br>
+  <input type="text" name="quantity"><br><br>
+  <input type="submit" value="Submit">
+</form>
+<br><span style = "font-size: 14pt;"><strong>Bills Table</strong></span><br>
+<form method = "POST" action="/api/updatebills">
+  Bill_ID:<br>
+  <input type="text" name="bill_ID"><br>
+  Total_Price:<br>
+  <input type="text" name="total_price"><br>
+  Tip:<br>
+  <input type="text" name="tip"><br><br>
+  <input type="submit" value="Submit">
+</form>
+<br><span style = "font-size: 14pt;"><strong>Issues Table</strong></span><br>
+<form method = "POST" action="/api/updateissues">
+  Bill_ID:<br>
+  <input type="text" name="bill_ID"><br>
+  Bar:<br>
+  <input type="text" name="bar"><br>
+  Time:<br>
+  <input type="text" name="time"><br>
+  Day:<br>
+  <input type="text" name="day"><br><br>
+  <input type="submit" value="Submit">
+</form><br>
+<h2>Deletes</h2>
+<span style = "font-size: 14pt;"><strong>Bars Table</strong></span><br>
+<form method = "POST" action="/api/deletebars">
+  Name:<br>
+  <input type="text" name="name"><br>
+  <input type="submit" value="Submit">
+</form>
+<br><span style = "font-size: 14pt;"><strong>Items Table</strong></span><br>
+<form method = "POST" action="/api/deleteitems">
+  Name:<br>
+  <input type="text" name="name"><br>
+  <input type="submit" value="Submit">
+</form>
+<br><span style = "font-size: 14pt;"><strong>Drinkers Table</strong></span><br>
+<form method = "POST" action="/api/deletedrinkers">
+  Name:<br>
+  <input type="text" name="name"><br>
+  <input type="submit" value="Submit">
+</form>
+<br><span style = "font-size: 14pt;"><strong>Frequents Table</strong></span><br>
+<form method = "POST" action="/api/deletefrequents">
+  Drinker:<br>
+  <input type="text" name="drinker"><br>
+  Bar:<br>
+  <input type="text" name="bar"><br><br>
+  <input type="submit" value="Submit">
+</form>
+<br><span style = "font-size: 14pt;"><strong>Billed_To Table</strong></span><br>
+<form method = "POST" action="/api/deletebilledto">
+  Bill_ID:<br>
+  <input type="text" name="bill_ID"><br>
+  <input type="submit" value="Submit">
+</form>
+<br><span style = "font-size: 14pt;"><strong>Sells Table</strong></span><br>
+<form method = "POST" action="/api/deletesells">
+  Bar:<br>
+  <input type="text" name="bar"><br>
+  Item:<br>
+  <input type="text" name="item"><br>
+  <input type="submit" value="Submit">
+</form>
+<br><span style = "font-size: 14pt;"><strong>Includes Table</strong></span><br>
+<form method = "POST" action="/api/deleteincludes">
+  Bill_ID:<br>
+  <input type="text" name="bill_ID"><br>
+  Item:<br>
+  <input type="text" name="item"><br>
+  <input type="submit" value="Submit">
+</form>
+<br><span style = "font-size: 14pt;"><strong>Bills Table</strong></span><br>
+<form method = "POST" action="/api/deletebills">
+  Bill_ID:<br>
+  <input type="text" name="bill_ID"><br>
+  <input type="submit" value="Submit">
+</form>
+<br><span style = "font-size: 14pt;"><strong>Issues Table</strong></span><br>
+<form method = "POST" action="/api/deleteissues">
+  Bill_ID:<br>
+  <input type="text" name="bill_ID"><br>
+  <input type="submit" value="Submit">
+</form><br>
+<h2>Inserts</h2>
+<span style = "font-size: 14pt;"><strong>Bars Table</strong></span><br>
+<form method = "POST" action="/api/insertbars">
+  Name:<br>
+  <input type="text" name="name"><br>
+  Location:<br>
+  <input type="text" name="loc"><br>
+  Opening Hours:<br>
+  <input type="text" name="opening"><br>
+  Closing Hours:<br>
+  <input type="text" name="closing"><br><br>
+  <input type="submit" value="Submit">
+</form>
+<br><span style = "font-size: 14pt;"><strong>Items Table</strong></span><br>
+<form method = "POST" action="/api/insertitems">
+  Name:<br>
+  <input type="text" name="name"><br>
+  Manufacturer:<br>
+  <input type="text" name="manufacturer"><br><br>
+  <input type="submit" value="Submit">
+</form>
+<br><span style = "font-size: 14pt;"><strong>Drinkers Table</strong></span><br>
+<form method = "POST" action="/api/insertdrinkers">
+  Name:<br>
+  <input type="text" name="name"><br>
+  Address:<br>
+  <input type="text" name="address"><br><br>
+  <input type="submit" value="Submit">
+</form>
+<br><span style = "font-size: 14pt;"><strong>Frequents Table</strong></span><br>
+<form method = "POST" action="/api/insertfrequents">
+  Drinker:<br>
+  <input type="text" name="drinker"><br>
+  Bar:<br>
+  <input type="text" name="bar"><br><br>
+  <input type="submit" value="Submit">
+</form>
+<br><span style = "font-size: 14pt;"><strong>Billed_To Table</strong></span><br>
+<form method = "POST" action="/api/insertbilledto">
+  Bill_ID:<br>
+  <input type="text" name="bill_ID"><br>
+  Drinker:<br>
+  <input type="text" name="drinker"><br><br>
+  <input type="submit" value="Submit">
+</form>
+<br><span style = "font-size: 14pt;"><strong>Sells Table</strong></span><br>
+<form method = "POST" action="/api/insertsells">
+  Bar:<br>
+  <input type="text" name="bar"><br>
+  Item:<br>
+  <input type="text" name="item"><br>
+  Price:<br>
+  <input type="text" name="price"><br><br>
+  <input type="submit" value="Submit">
+</form>
+<br><span style = "font-size: 14pt;"><strong>Includes Table</strong></span><br>
+<form method = "POST" action="/api/insertincludes">
+  Bill_ID:<br>
+  <input type="text" name="bill_ID"><br>
+  Item:<br>
+  <input type="text" name="item"><br>
+  Quantity:<br>
+  <input type="text" name="quantity"><br><br>
+  <input type="submit" value="Submit">
+</form>
+<br><span style = "font-size: 14pt;"><strong>Bills Table</strong></span><br>
+<form method = "POST" action="/api/insertbills">
+  Bill_ID:<br>
+  <input type="text" name="bill_ID"><br>
+  Tip:<br>
+  <input type="text" name="tip"><br><br>
+  <input type="submit" value="Submit">
+</form>
+<br><span style = "font-size: 14pt;"><strong>Issues Table</strong></span><br>
+<form method = "POST" action="/api/insertissues">
+  Bill_ID:<br>
+  <input type="text" name="bill_ID"><br>
+  Bar:<br>
+  <input type="text" name="bar"><br>
+  Time:<br>
+  <input type="text" name="time"><br>
+  Day:<br>
+  <input type="text" name="day"><br><br>
+  <input type="submit" value="Submit">
+</form>
+<br><br>

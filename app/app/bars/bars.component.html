@@ -1,0 +1,24 @@
+<div class="container">
+    <p-table [value] = "bars">
+      <ng-template pTemplate = "header">
+          <tr>
+           <th>Name</th>
+           <th>Location</th>
+           <th>Open</th>
+           <th>Close</th>
+          </tr>
+      </ng-template>
+      <ng-template pTemplate = "body" let-bar>
+          <tr>
+            <td>
+              <a routerLink="/bars/{{bar.name}}">
+                {{bar.name}}
+              </a>
+            </td>
+            <td>{{ bar.location}}</td>
+            <td>{{bar.opening_hours}}</td>
+            <td>{{bar.closing_hours}}</td>
+          </tr>
+      </ng-template>
+    </p-table>
+  </div>
